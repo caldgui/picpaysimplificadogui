@@ -16,12 +16,15 @@ public class UserService {
 
     @Autowired
     private UserRepository repository;
-    public void validateTransaction(User sender, BigDecimal amount) throws Exception{
+    public void validateTransaction(User sender, BigDecimal amount, User receiver) throws Exception{
         if (sender.getUserType() == UserType.MERCHANT){
             throw new Exception("Usuário do tipo Lojista não está autorizado a realizar transação");
         }
         if(sender.getBalance().compareTo(amount) < 0){
             throw new Exception("Saldo insuficiente");
+        }
+        if(sender.getId() == receiver.getId()){
+            throw new Exception("Usuário não pode transferir para si mesmo");
         }
     }
 
