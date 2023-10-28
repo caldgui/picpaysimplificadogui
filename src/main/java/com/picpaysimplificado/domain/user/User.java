@@ -18,14 +18,21 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String firstName;
+
     private String lastName;
+
     @Column(unique=true)
     private String document;
+
     @Column(unique=true)
     private String email;
+
     private String password;
+
     private BigDecimal balance;
+
     @Enumerated(EnumType.STRING)
     private UserType userType;
 
@@ -35,6 +42,8 @@ public class User {
         this.balance = data.balance();
         this.userType = data.userType();
         this.email = data.email();
+        this.password = data.password();
+        this.document= data.document();
 
     }
 
