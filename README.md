@@ -5,4 +5,4 @@ Basicamente, este é um repositório onde acompanho o vídeo da Fernanda Kipper 
 
 ## Problema
 Os links de validação deixados no repositório do desafio não estão funcionando mais :/
-Programemos só pra pegar prática
+Comentei o uso das validações para poder simular as transições
